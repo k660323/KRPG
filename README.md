@@ -2,7 +2,7 @@
 ## 1. 소개
 
 <div align="center">
-  <img src="https://github.com/k660323/KRPG/blob/main/Images/Main.png" width="99%" height="720"/>
+  <img src="https://github.com/k660323/KRPG/blob/main/Images/Main.png" width="99%" height="520"/>
   
   < 게임 플레이 사진 >
 </div>
