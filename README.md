@@ -62,33 +62,12 @@
 
 대부분 유니티 프로젝트에서 사용되고 자주 사용하는 기능들을 구현하여 싱글톤 클래스인 Managers에서 접근할 수 있도록 구현
       
-#### **코어 매니저**
+#### **매니저**
 
-+ DataManager - 데이터 관리 매니저
-+ InputManager - 사용자 입력 관리 매니저
-+ ParticalManager - 파티클 생성 유틸
-+ PhotonNetworkManager - 포톤 네트워크 객체 관리 매니저
-+ PoolManager - 오브젝트 풀링 매니저
-+ ResourceManager - 리소스 매니저
-+ SceneManager - 씬 매니저
-+ SoundManager - 사운드 매니저
-+ UIManager - UI 매니저
++ KRPGAssetManager
+  +  아이템, 몬스터, 플레이어 관련 데이터를 미리 로드해 캐싱해 놓은 싱글톤 매니저
 
-        
-#### **컨텐츠 매니저**
-
-+ GameManager
-  + 네트워크에 존재하는 게임 오브젝트를 서치, 씬 정보, 소유 플레이어, 관전 등 각종 유틸 클래스
-  + 네트워크 오브젝트들은 고유의 ViewId를 가지고 있어 이를 key로 이용해 자료구조 Dictionary<key, GameObject>형태로 저장
-  + BaseController를 상속받는 모든 클래스가 AWake()를 실행 시 SetPhotonObject함수 실행하여 등록하도록 설계
-  + Photon은 룸오브젝트는 ViewID 0 ~ 999, 플레이어 오브젝트는 ViewID 1000번 이후로 플레이어당 1000개의 오브젝트들을 각각 할당 할 수 있습니다.
-
-+ GameOptionManager
-  + 게임 해상도, 그래픽 품질, 사운드, 마우스 감도 값들을 관리하는 매니저
-  + Json파일로 데이터를 저장 및 불러옵니다.
-  + UI_Preferences클래스에서 UI로 환경 설정하면 값이 반영됩니다.
-         
-[Managers.cs](https://github.com/k660323/FunnyLand/blob/main/Scripts/Managers/Managers.cs)
+[KRPGAssetManager.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/KRPGAssetManager.h) / [KRPGAssetManager.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/KRPGAssetManager.cpp)
 
 <br>
 
@@ -96,20 +75,49 @@
 
 <br>
      
-### **씬**
+### **캐릭터**
 
-전체적인 씬은 로그인, 로비, 게임 선택, 게임 씬으로 나눠서 구현
-   
++ CharacterBase
+  + 
 
-#### **게임 씬**
-+ GameScene
-  + 게임씬에는 진행할 게임 컨텐츠를 지정하는 씬 입니다.
-  + 여러 컨텐츠 씬에서 사용하는 기능들은 게임 씬에서 구현합니다.
-  + 방장이 60초 동안 원하는 미니 게임을 선택해 플레이 하면 됩니다.
-  + 최대 라운드는 게임 시작전 설정한 라운드를 따라가며 모든 라운드가 끝나면 개인전, 팀전에 따라 점수가 높은 유저 또는 팀이 승리합니다.
-  + 컨텐츠 흐름은 FSM형식으로 구현된 StateController()함수를 통해 게임 상태를 제어 합니다.
-    
-[GameScene.cs](https://github.com/k660323/FunnyLand/blob/main/Scripts/Scenes/GameScene.cs)
+#### **플레이어**
++ CharacterPlayer
+  +
+  
+
+#### **몬스터**
++ CharaceterMonster
+  + 
+
+
+### **Controller**
++ PlayerControllerBase
+  +
+
++ MonsterAIControllerBase
+  + 
+
+### **FSM**
++ StateMahcine
+  + 
+
++ BaseState
+  + 
+
+### **인벤토리**
++
+
+### **장비**
++
+
+### **아이템**
++
+
+### **능력치**
++
+
+### **애니메이션**
++
 
 <br>
 
@@ -118,6 +126,18 @@
 <br>
 
 #### **기타**
+
++ Define
+  + 각종 Enum들을 정의하는 클래스
+
+[Define.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Define/Define.h)
+
+
++ KRPGGameplayTags
+  + 언리얼에 지원하는 계층형 Tag, Enum 처럼 쓸수있는 것이 특징
+  + 사용자 입력 Tag 정의
+
+ [KRPGGameplayTags.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/KRPGGameplayTags.h) / [KRPGGameplayTags.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/KRPGGameplayTags.cpp)
 
 
 <br>
@@ -133,6 +153,8 @@
  
 ## 6. 느낀점
 + Unreal Engine은 Unity와 달리 게임 구조가 이미 잡혀져 있다 보니 기능을 이해하지 못해 컨텐츠로 응용하기 어려웠기에 Unreal Engine을 Unity처럼 자유자제로 다루기 위해 추가적인 학습의 필요성을 느꼈습니다.
++ 다음번엔 일일히 GameplayTags정의를 직접 작성하지 말고 매크로로 Tag를 정의해보자.
++ StateMahcine 의 State 할당을 Controller를 상속받은 클래스에서 할당하도록 구현하는게 좋을것 같다. 왜냐하면 입력과 State 할당을 해당 클래스에서 수행하면 Controller 클래스를 모듈화하여 다양한 행동을 구현할 수 있을 것 같다. (ex 탈것)
 
 
 ## 7. 플레이 영상
