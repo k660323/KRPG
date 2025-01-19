@@ -134,6 +134,7 @@
 
 [StateMahcineComponent.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/StateMachine/StateMachineComponent.h) / [StateMachineComponent.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/StateMachine/StateMachineComponent.cpp)
 
+<br>
 
 + BaseState
   + 모든 상태에서 사용되는 기능들을 정의한 클래스
@@ -158,7 +159,18 @@
 
 
 ### **인벤토리**
-+
+
++ InventoryComponent
+  + 플레이어가 소지한 아이템을 표시하는 인벤토리
+  + 아이템 정보 확인, 아이템 스왑, 아이템 드랍, 아이템 나누기 기능 구현
+
+[InventoryComponent.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Inventory/InventoryComponent.h) / [InventoryComponent.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Inventory/InventoryComponent.cpp)
+
+<br>
+
+---
+
+<br>
 
 ### **장비**
 +
@@ -185,6 +197,7 @@
 
 [Define.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Define/Define.h)
 
+<br>
 
 + KRPGGameplayTags
   + 언리얼에 지원하는 계층형 Tag, Enum 처럼 쓸수있는 것이 특징
