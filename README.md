@@ -100,6 +100,11 @@
 
 [CharacterMonster.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Actor/Monster/CharacterMonster.h) / [CharacterMonster.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Actor/Monster/CharacterMonster.cpp)
 
+<br>
+
+---
+
+<br>
 
 ### **Controller**
 + PlayerControllerBase
@@ -117,12 +122,40 @@
 [MonsterAIController.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/ControllerEx/Monster/MonsterAIControllerBase.h) / [MonsterAIController.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/ControllerEx/Monster/MonsterAIControllerBase.cpp)
 
 
+<br>
+
+---
+
+<br>
+
 ### **FSM**
 + StateMahcine
   + 캐릭터들의 상태를 관리하는 클래스
 
+[StateMahcineComponent.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/StateMachine/StateMachineComponent.h) / [StateMachineComponent.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/StateMachine/StateMachineComponent.cpp)
+
+
 + BaseState
   + 모든 상태에서 사용되는 기능들을 정의한 클래스
+  + 이 클래스를 상속받아 추상 클래스를 구현하여 상태를 구현한다.
+
+[BaseState.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/State/BaseState.h) / [BaseState.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/State/BaseState.cpp)
+
+--추상 클래스--
+
+| 함수명 | 설명 |
+|:---:|:---|
+| OnCheckEnterState | ●  상태 진입 조건을 확인하는 함수 리턴값은 boolean |
+| OnEnterState | ●  상태 진입시 초기화 함수 |
+| OnTickState | ●  상태 진입 조건을 확인하는 함수 리턴값은 boolean |
+| OnExitState | ●  상태 전환시 현재 상태를 초기화 하는 함수 |
+
+<br>
+
+---
+
+<br>
+
 
 ### **인벤토리**
 +
