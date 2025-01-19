@@ -253,16 +253,12 @@
 
 <br>
 
-## 5. 구현에 어려웠던 점과 해결과정
-+ Widget의 생명주기 때문에 초기화가 진행되지 않은 문제로 인해 구현에 어려움을 겪었습니다.
-  +  
-    
- 
-## 6. 느낀점
+
+## 5. 느낀점
 + Unreal Engine은 Unity와 달리 게임 구조가 이미 잡혀져 있다 보니 기능을 이해하지 못해 컨텐츠로 응용하기 어려웠기에 Unreal Engine을 Unity처럼 자유자제로 다루기 위해 추가적인 학습의 필요성을 느꼈습니다.
 + 다음번엔 일일히 GameplayTags정의를 직접 작성하지 말고 매크로로 Tag를 정의해보자.
 + StateMahcine 의 State 할당을 Controller를 상속받은 클래스에서 할당하도록 구현하는게 좋을것 같다. 왜냐하면 입력과 State 할당을 해당 클래스에서 수행하면 Controller 클래스를 모듈화하여 다양한 행동을 구현할 수 있을 것 같다. (ex 탈것)
 
 
-## 7. 플레이 영상
+## 6. 플레이 영상
 + https://www.youtube.com/watch?v=cyf_IUQBiYw
