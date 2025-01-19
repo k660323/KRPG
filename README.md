@@ -162,9 +162,12 @@
 
 + InventoryComponent
   + 플레이어가 소지한 아이템을 표시하는 인벤토리
-  + 아이템 정보 확인, 아이템 스왑, 아이템 드랍, 아이템 나누기 기능 구현
+  + 아이템 정보 확인, 아이템 스왑, 아이템 드랍, 아이템 나누기 기능 구현\
+  + 초기화시 HUD에 접근해 InventoryWidget이랑 연동 
 
 [InventoryComponent.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Inventory/InventoryComponent.h) / [InventoryComponent.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Inventory/InventoryComponent.cpp)
+
+
 
 <br>
 
@@ -173,16 +176,54 @@
 <br>
 
 ### **장비**
-+
+
++ 현재 플레이어가 장착 아이템을 관리
++ 초기화시 HUD에 접근해 EquipmentWindowWidget이랑 연동
+  
+[EquipmentComponent.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Equipment/EquipmentComponent.h) / [EquipmentComponent.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Equipment/EquipmentComponent.cpp)
+
+<br>
+
+---
+
+<br>
 
 ### **아이템**
-+
++ ItemData
+  + 아이템 정보를 가지는 데이터
+
+[ItemData.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Data/ItemData.h) / [ItemData.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Data/ItemData.cpp)
+
+ 
++ Item
+  + 데이터 및 기능을 구현하는 클래스
+  + KRPGAssetManager에서 데이터를 가져와서 생성한다.
+
+ [Item.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Item/Item.h) / [Item.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Item/Item.cpp)
+     
+<br>
+
+---
+
+<br>
 
 ### **능력치**
-+
++ 현재 플레이어의 능력치를 관리하는 컴포넌트
++ 초기화시 HUD에 접근해 블루프린트로 제작한 WBP_StatInfo로 연동 수치 변경 시 델리게이트로 즉각 반영
+  
+[Stat.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Stat/Stat.h) / [Stat.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Stat/Stat.cpp)
+
+<br>
+
+---
+
+<br>
 
 ### **애니메이션**
-+
++ 애니메이션에 사용될 변수들을 CPP에서 정의 및 캐싱
+
+[AnimInstanceBase.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Animation/AnimInstanceBase.h) / [AnimInstanceBase.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Animation/AnimInstanceBase.cpp)
+
 
 <br>
 
