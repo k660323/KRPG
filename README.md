@@ -103,17 +103,26 @@
 
 ### **Controller**
 + PlayerControllerBase
-  +
+  + 플레이어의 조작을 담당하는 클래스
+  + EnhancedInput을 이용하여 구현
+  + 이동, 점프, 카메라 이동, 줌 기능은 해당 클래스에서 함수로 만들어 바인딩
+  + 공격, 구르기, 스킬, 인벤토리, 스탯, 장비창 아이템 줍기 기능들은 KRPGInputComponent클래스에서 InputConfig로 정의해놓은 입력 데이터 기반으로 바인딩하여 Tag에 따라 AbilityInputTagReleased에서 처리하도록 구현
+ 
+[PlayerControllerBase.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/ControllerEx/Player/PlayerControllerBase.h) / [PlayerControllerBase.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/ControllerEx/Player/PlayerControllerBase.cpp)
+
 
 + MonsterAIControllerBase
-  + 
+  + 상태 머신에 사용될 데이터를 캐싱해놓은 클래스 (추적 시작 위치, 추적 대상 등)
+
+[MonsterAIController.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/ControllerEx/Monster/MonsterAIControllerBase.h) / [MonsterAIController.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/ControllerEx/Monster/MonsterAIControllerBase.cpp)
+
 
 ### **FSM**
 + StateMahcine
-  + 
+  + 캐릭터들의 상태를 관리하는 클래스
 
 + BaseState
-  + 
+  + 모든 상태에서 사용되는 기능들을 정의한 클래스
 
 ### **인벤토리**
 +
