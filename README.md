@@ -78,16 +78,27 @@
 ### **캐릭터**
 
 + CharacterBase
-  + 
+  + 기술 데모에 쓰일 캐릭터들의 공통적으로 사용할 기능들을 정의해놓은 클래스 (무기, 상태머신 등)
+  + 스탯, 상태 초기화 가상 함수 존재
+
+[CharacterBase.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Actor/CharacterBase.h) / [CharacterBase.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Actor/CharacterBase.cpp)
+
 
 #### **플레이어**
 + CharacterPlayer
-  +
-  
+  + CharacterBase를 상속받은 플레이어 전용 클래스
+  + 플레이어가 사용할 기능을 정의한 클래스 (카메라, 인벤토리, 장비)
+ 
+[CharacterPlayer.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Actor/Player/CharacterPlayer.h) / [CharacterPlayer.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Actor/Player/CharacterPlayer.cpp)
+
 
 #### **몬스터**
 + CharaceterMonster
-  + 
+  + CharacterBase를 상속받은 몬스터 전용 클래스
+  + 몬스터 이름과 체력을 나타내는 UWidgetComponent를 정의 및 초기화 또는 이벤트 바인딩
+  + 스탯, 상태 등 초기화 가상 함수 구현
+
+[CharacterMonster.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Actor/Monster/CharacterMonster.h) / [CharacterMonster.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Actor/Monster/CharacterMonster.cpp)
 
 
 ### **Controller**
