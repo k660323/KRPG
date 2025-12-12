@@ -158,7 +158,7 @@
 
 + InventoryComponent
   + 플레이어가 소지한 아이템을 표시하는 인벤토리
-  + 아이템 정보 확인, 아이템 스왑, 아이템 드랍, 아이템 나누기 기능 구현\
+  + 아이템 정보 확인, 아이템 스왑, 아이템 드랍, 아이템 나누기 기능 구현
   + 초기화시 HUD에 접근해 InventoryWidget이랑 연동 
 
 [InventoryComponent.h](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Inventory/InventoryComponent.h) / [InventoryComponent.cpp](https://github.com/k660323/KRPG/blob/main/Source/KRPG/Inventory/InventoryComponent.cpp)
